@@ -12,39 +12,46 @@
 	<meta name="robots" content="{{ meta.robots }}">
 {% endif %}
 
+	<link rel="stylesheet" href="{{ theme_url }}/assets/css/style.css">
 	<link rel="stylesheet" href="{{ theme_url }}/assets/css/foundation.css">
 	<script src="{{ theme_url }}/assets/js/vendor/modernizr.js"></script>
 
 </head>
 <body>
 
-	<nav class="top-bar" data-topbar>
-		<ul class="title-area">
-			<li class="name">
-				<h1><a href="{{ base_url }}">{{ site_title }}</a></h1>
-			</li>
-			<li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
-		</ul>
-		<section class="top-bar-section">
-			<ul class="left">
-				{% for page in pages %}
-				<li><a href="{{ page.url }}">{{ page.title }}</a></li>
-				{% endfor %}
+	<header id="header">
+		<nav class="top-bar" data-topbar>
+			<ul class="title-area">
+				<li class="name">
+					<h1><a href="{{ base_url }}">{{ site_title }}</a></h1>
+				</li>
+				<li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
 			</ul>
-		</section>
-	</nav>
+			<section class="top-bar-section">
+				<ul class="left">
+					{% for page in pages %}
+					<li><a href="{{ page.url }}">{{ page.title }}</a></li>
+					{% endfor %}
+				</ul>
+			</section>
+		</nav>
+	</header>
 
-	<div class="row">
-		<div class="large-12 columns">
-			{{ content }}
+	<section id="content">
+		<div class="row">
+			<div class="large-12 columns">
+				{{ content }}
+			</div>
 		</div>
-	</div>
+	</section>
 
-	<div class="row">
-		<div class="large-12 columns">
-			&copy; <a href="http://github.com/zohma/excavating/" target="_blank">Excavating</a> by <a href="http://github.com/zohma/" target="_blank">Zohma</a>
+	<footer id="footer">
+		<div class="row">
+			<div class="large-12 columns">
+				&copy; <a href="http://github.com/zohma/excavating/" target="_blank">Excavating</a> by <a href="http://github.com/zohma/" target="_blank">Zohma</a>
+			</div>
 		</div>
-	</div>
+	</footer>
 
 	<script src="{{ theme_url }}/assets/js/vendor/jquery.js"></script>
 	<script src="{{ theme_url }}/assets/js/foundation.min.js"></script>
